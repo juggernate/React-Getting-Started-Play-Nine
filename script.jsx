@@ -31,20 +31,6 @@ var ButtonFrame = React.createClass({
 
 var AnswerFrame = React.createClass({
   render: function() {
-    return (
-      <div id="answer-frame">
-      <div className="well">
-        {this.props.selectedNumbers}
-      </div>
-      </div>
-    );
-  }
-});
-
-
-/*
-var AnswerFrame = React.createClass({
-  render: function() {
   
     var props=this.props;
     var selectedNumbers = props.selectedNumbers.map(function(i){
@@ -58,13 +44,13 @@ var AnswerFrame = React.createClass({
     return (
       <div id="answer-frame">
       <div className="well">
-        {this.props.selectedNumbers}
+        {selectedNumbers}
       </div>
       </div>
     );
   }
 });
-*/
+
 
 var NumbersFrame = React.createClass({
   render: function() {
@@ -112,17 +98,19 @@ var Game = React.createClass({
       this.setState({selectedNumbers: selectedNumbers});
   },
   render: function() {
+    var selectedNumbers = this.state.selectedNumbers,
+    numberOfStars = this.state.numberOfStars;
     return (
       <div id="game">
         <h2>Play Nine</h2>
         <hr />
         <div className="clearfix">
-        <StarsFrame numberOfStars = {this.state.numberOfStars}/>
+        <StarsFrame numberOfStars = {numberOfStars}/>
         <ButtonFrame />
-        <AnswerFrame selectedNumbers = {this.state.selectedNumbers}
-                    unselectNumber = {this.state.unselectNumber}/>
+        <AnswerFrame selectedNumbers = {selectedNumbers}
+                    unselectNumber = {this.unselectNumber}/>
         </div>
-        <NumbersFrame selectedNumbers = {this.state.selectedNumbers}
+        <NumbersFrame selectedNumbers = {selectedNumbers}
                       selectNumber={this.selectNumber} />
       </div>
     );
