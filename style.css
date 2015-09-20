@@ -32,7 +32,12 @@
 
 #numbers-frame .selected-true {
   background-color: #e8e8e8;
-  color: #ddd;
+  color: #8a8a8a;
   cursor: not-allowed;
 }
 
+#numbers-frame .used-true {
+  background-color: #b7e9b7;
+  color: #89a4a1;
+  cursor: not-allowed;
+}
