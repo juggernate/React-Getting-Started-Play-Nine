@@ -7,7 +7,7 @@ var StarsFrame = React.createClass({
         <span className="glyphicon glyphicon-star"></span>
       );
     }
-    
+
     return (
       <div id="stars-frame">
         <div className="well">
@@ -20,9 +20,7 @@ var StarsFrame = React.createClass({
 
 var ButtonFrame = React.createClass({
   render: function() {
-    var disabled;
-    disabled = (this.props.selectedNumbers.length === 0);
-    
+    var disabled = (this.props.selectedNumbers.length === 0);
     return (
       <div id="button-frame">
         <button className="btn btn-primary btn-lg" disabled={disabled}>=</button>
@@ -34,7 +32,7 @@ var ButtonFrame = React.createClass({
 
 var AnswerFrame = React.createClass({
   render: function() {
-  
+
     var props=this.props;
     var selectedNumbers = props.selectedNumbers.map(function(i){
       return (
@@ -43,7 +41,7 @@ var AnswerFrame = React.createClass({
         < /span>
       )
     });
-  
+
     return (
       <div id="answer-frame">
       <div className="well">
@@ -57,11 +55,11 @@ var AnswerFrame = React.createClass({
 
 var NumbersFrame = React.createClass({
   render: function() {
-    
+
     var numbers = [], className,
     selectNumber = this.props.selectNumber,
     selectedNumbers = this.props.selectedNumbers;
-    
+
     for (var i=1; i<=9; i++){
       className = "number selected-" + (selectedNumbers.indexOf(i) >= 0);
       numbers.push(
@@ -70,7 +68,7 @@ var NumbersFrame = React.createClass({
         </div>
       );
     }
-    
+
     return (
       <div id="numbers-frame">
         <div className="well">
